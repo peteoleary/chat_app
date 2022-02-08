@@ -6,9 +6,14 @@ This app takes the ChatApp module example from https://github.com/ruby/rbs and b
 
 # Setup and run
 
+Requires Ruby 3.0.1 which you can install via http://rbenv.org/
+
 ```
-git clone 
+git clone https://github.com/peteoleary/chat_app.git
 cd chat_app
+bundle install
+RBS_TEST_TARGET=ChatApp::* bundle exec ruby main.rb
+RBS_TEST_TARGET=ChatApp::* bundle exec ruby -Ilib:test test/test_chat_app.rb
 ```
 
 # Notes

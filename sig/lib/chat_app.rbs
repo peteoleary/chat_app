@@ -37,7 +37,8 @@ module ChatApp
     attr_reader users: Array[User]
     attr_reader bots: Array[Bot]
 
-    def initialize: (name: String) -> void
+    # keyword or positional
+    def initialize: (name: String | String) -> void
 
     def each_member: () { (User | Bot) -> void } -> void  # `{` and `}` means block.
                    | () -> Enumerator[User | Bot, void]   # Method can be overloaded.
