@@ -54,5 +54,9 @@ module ChatApp
     def send_message message
       @messages.push message
     end
+
+    def each_message
+      @messages
+    end
   end
 end

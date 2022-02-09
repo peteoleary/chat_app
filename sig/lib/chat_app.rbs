@@ -46,6 +46,6 @@ module ChatApp
     def each_member: () { (User | Bot) -> void } -> void  # `{` and `}` means block.
                    | () -> Enumerator[User | Bot, void]   # Method can be overloaded.
 
-    def each_message: () -> Enumerator[Message]
+    def each_message: () -> [Message]
   end
 end
