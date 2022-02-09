@@ -29,15 +29,30 @@ module ChatApp
   class Message
     attr_reader :from
     attr_reader :string
+
     def initialize from, string
       @from = from
       @string = string
+      @channel = nil
     end
   end
 
   class Channel
-    def initialize name
 
+    attr_reader :name
+    attr_reader :messages
+    attr_reader :users
+    attr_reader :bots
+
+    def initialize name
+      @name = name
+      @messages = []
+      @users = []
+      @bots = []
+    end
+
+    def send_message message
+      @messages.push message
     end
   end
 end

@@ -18,6 +18,6 @@ RBS_TEST_TARGET=ChatApp::* bundle exec ruby -Ilib:test test/test_chat_app.rb
 
 # Notes
 
-Ruby 3.0.1 tightens up the rules for positional v. keyword parameters https://www.ruby-lang.org/en/news/2019/12/12/separation-of-positional-and-keyword-arguments-in-ruby-3-0/
+Ruby 3.0.1 tightens up the rules for positional vs. keyword parameters https://www.ruby-lang.org/en/news/2019/12/12/separation-of-positional-and-keyword-arguments-in-ruby-3-0/
 
 RBS allows you to specify which to expect in the method signatures.

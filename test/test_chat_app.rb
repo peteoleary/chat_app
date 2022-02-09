@@ -41,9 +41,11 @@ class TestChatApp < Minitest::Test
   end
 
   def test_message_new_valid
+    channel = ChatApp::Channel.new 'test_channel'
     user = ChatApp::User.new 'pete', 'pete@timelight.com'
     valid_string = ChatApp::StringWithLimit.new "0123456789"
     message = ChatApp::Message.new user, valid_string
-    assert message.string.length > 0
+    channel.send_message message
+    assert channel.messages.length == 1
   end
 end

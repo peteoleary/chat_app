@@ -2,6 +2,4 @@
 require 'rbs/test/setup'
 require_relative './lib/chat_app'
 
-begin
   user = ChatApp::User.new 'pete', 'pete@timelight.com'
-end

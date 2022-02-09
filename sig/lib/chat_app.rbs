@@ -25,6 +25,7 @@ module ChatApp
     attr_reader string: StringWithLimit
     attr_reader from: User | Bot                     # `|` means union types: `#from` can be `User` or `Bot`
     attr_reader reply_to: Message?                   # `?` means optional type: `#reply_to` can be `nil`
+    attr_reader channel: Channel?                   # `?` means optional type: `#reply_to` can be `nil`
 
     def initialize: (User | Bot, StringWithLimit) -> void
 
@@ -38,9 +39,13 @@ module ChatApp
     attr_reader bots: Array[Bot]
 
     # keyword or positional
-    def initialize: (name: String | String) -> void
+    def initialize: (String) -> void
+
+    def send_message: (Message) -> void
 
     def each_member: () { (User | Bot) -> void } -> void  # `{` and `}` means block.
                    | () -> Enumerator[User | Bot, void]   # Method can be overloaded.
+
+    def each_message: () -> Enumerator[Message]
   end
 end
